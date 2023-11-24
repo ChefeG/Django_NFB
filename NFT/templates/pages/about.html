@@ -1,0 +1,246 @@
+{% load static %}
+{% include 'include/head.html' %}
+<body>
+
+<!--// Wrapper //-->
+<div class="kode-wrapper">
+    <header id="mainheader" class="kode-header-absolute">
+
+        <!--// TopBaar //-->
+        <div class="kode-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 kode_bg_white">
+                        <ul class="top_slider_bxslider">
+                            <li><span class="kode-barinfo"><strong>Latest News : </strong> Lorem ipsum dolor sit amet, cons ecte tuer adipiscing elit,</span></li>
+                            <li><span class="kode-barinfo"><strong>Latest News : </strong> Lorem ipsum dolor sit amet, cons ecte tuer adipiscing elit,</span></li>
+                            <li><span class="kode-barinfo"><strong>Latest News : </strong> Welcome visitor you can Login or Create an Account</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="kode-userinfo">
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-sign-in"></i> Login</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#myModalTwo"><i class="fa fa-user-plus"></i> Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// TopBaar //-->
+
+        <div class="header-8">
+            <div class="container">
+                <!--NAVIGATION START-->
+                {% include 'include/navigation.html' %}
+                <!--NAVIGATION END-->
+                <nav class="navbar navbar-default">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="kode-subheader subheader-height">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Accordion</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Sub Header //-->
+
+    <!--// Main Content //-->
+    <div class="kode-content">
+
+        <section class="kode-pagesection kode-padding-bottom-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="kd-accordion">
+
+                            <div class="accordion" id="section2">Why Maxio Nam liber tempor cum soluta ? <span class="fa fa-plus"></span></div>
+                            <div class="accordion-content">
+                                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                            </div>
+
+                            <div class="accordion" id="section3">Our History Nam liber tempor cum soluta  <span class="fa fa-plus"></span></div>
+                            <div class="accordion-content">
+                                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                            </div>
+
+                            <div class="accordion" id="section4">Our History Nam liber tempor cum soluta  <span class="fa fa-plus"></span></div>
+                            <div class="accordion-content">
+                                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                            </div>
+
+
+                        </div>
+                        <pre><code>
+&lt;div class=&quot;kd-accordion&quot;&gt;
+
+    &lt;div class=&quot;accordion&quot; id=&quot;section2&quot;&gt;Why Maxio? &lt;span class=&quot;fa fa-plus&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;accordion-content&quot;&gt;
+        &lt;p&gt;Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;accordion&quot; id=&quot;section2&quot;&gt;Our History &lt;span class=&quot;fa fa-plus&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;accordion-content&quot;&gt;
+        &lt;p&gt;Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;accordion&quot; id=&quot;section2&quot;&gt;Our History &lt;span class=&quot;fa fa-plus&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;accordion-content&quot;&gt;
+        &lt;p&gt;Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.&lt;/p&gt;
+    &lt;/div&gt;
+
+
+&lt;/div&gt;
+                </code></pre>
+                    </div>
+                    <aside class="kode-pagesidebar col-md-3">
+
+                        <div class="widget widget_categories">
+                            <div class="kode-widget-title"> <h2>Shortcodes</h2> </div>
+                            <ul>
+                                <li><a href="accordian.html">Accordian</a></li>
+                                <li><a href="button.html">Button</a></li>
+                                <li><a href="frame.html">Image Frame</a></li>
+                                <li><a href="list.html">List</a></li>
+                                <li><a href="map.html">Map</a></li>
+                                <li><a href="message.html">Message</a></li>
+                                <li><a href="sepratore.html">Separator</a></li>
+                                <li><a href="skills.html">Skills</a></li>
+                                <li><a href="table.html">Table</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="skills.html">Skills</a></li>
+                                <li><a href="video.html">Video</a></li>
+                            </ul>
+                        </div>
+
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!--// Main Content //-->
+
+    <!--// NewsLatter //-->
+    <div class="kode-newslatter kode-bg-color" >
+        <span class="kode-halfbg thbg-color"></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Subcribe Our Monthly Newsletter</h3>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <input type="text" placeholder="Your E-mail Adress" name="s" required>
+                        <label><input type="submit" value=""></label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// NewsLatter //-->
+
+    <footer id="footer1">
+        <!--Footer Medium-->
+        <div class="footer-medium">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="about-widget">
+                            <h3>About Kickoff</h3>
+                            <ul class="kode-form-list">
+                                <li><i class="fa fa-home"></i> <p><strong>Address:</strong> 805 omnis iste natus error.</p></li>
+                                <li><i class="fa fa-phone"></i> <p><strong>Phone:</strong> 111 8756 22  777 4456 112</p></li>
+                                <li><i class="fa fa-envelope-o"></i> <p><strong>Email:</strong> Info@sportyleague.com</p></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget widget-flickr">
+                            <h3>Flickr</h3>
+                            <ul>
+                                <li><a href="#"><img alt="" src="extra-images/widgetgallery-1.jpg"></a></li>
+                                <li><a href="#"><img alt="" src="extra-images/widgetgallery-2.jpg"></a></li>
+                                <li><a href="#"><img alt="" src="extra-images/widgetgallery-3.jpg"></a></li>
+                                <li><a href="#"><img alt="" src="extra-images/widgetgallery-1.jpg"></a></li>
+                                <li><a href="#"><img alt="" src="extra-images/widgetgallery-2.jpg"></a></li>
+                                <li><a href="#"><img alt="" src="extra-images/widgetgallery-3.jpg"></a></li>
+                                <li><a href="#"><img alt="" src="extra-images/widgetgallery-1.jpg"></a></li>
+                                <li><a href="#"><img alt="" src="extra-images/widgetgallery-2.jpg"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-us-widget">
+                            <h3>Connect with us</h3>
+                            <p>Follow us to stay in the loop on what’s<br>
+                                Sed ut perspiciatis unde omnis iste natus<br> error sit Sed ut perspiciatis unde omnis iste<br> natus error sit</p>
+                            <ul class="social-links1">
+                                <li>
+                                    <a href="#" class="tw-bg1"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fb-bg1"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="youtube-bg1"><i class="fa fa-youtube"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="linkedin-bg1"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tw-bg1"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fb-bg1"><i class="fa fa-facebook"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer Medium End-->
+
+
+    </footer>
+    <!--// Contact Footer //-->
+
+    <div class="kode-bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>©2015 KickOff. All Right Reserved</p>
+                </div>
+                <div class="col-md-6">
+                    <a href="#" id="kode-topbtn" class="thbg-colortwo"><i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+        </div>      </div>
+    <div class="clearfix clear"></div>
+</div>
+<!--// Wrapper //-->
+<!-- jQuery (necessary for JavaScript plugins) -->
+{% include 'include/scripts.html' %}
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+<!--<input type="text" placeholder="Your E-mail Adress" name="s" required>&ndash;&gt;-->
+
+<form action="{% url 'contact' %}" method="post">
+    {% csrf_token %}
+    {{ contact_form }}
+    <label><input type="submit" value=""></label>
+</form>

@@ -1,0 +1,78 @@
+{% load static %}
+        <!--NAVIGATION START-->
+        <div class="kode-navigation pull-left">
+            <ul>
+                <li><a href="{% url 'main' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'announcements_list_view' %}">Announcements</a>
+                    <ul class="children">
+                        <li><a href="fixer_list.html">All Matches</a></li>
+                        <li><a href="fixer_list_view.html">List View</a></li>
+                        <li><a href="fixture_full_view.html">Full View</a></li>
+                        <li><a href="fixture-detail.html">Fixture detail</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'contact' %}">Contact us</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="kode-navigation">
+            <ul>
+                <li>
+                    <a href="{% url 'team' %}">Team & Player</a>
+                    <ul class="children">
+                        <li><a href="player-list.html">Players</a></li>
+                        <li><a href="player-detail.html">Player detail</a></li>
+                        <li><a href="team-detail.html">Team Detail</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'faq' %}">Faq</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a>
+                    <ul class="children">
+                        <li><a href="accordian.html">Accordion</a></li>
+                        <li><a href="button.html">Button</a></li>
+                        <li><a href="frame.html">Image Frame</a></li>
+                        <li><a href="list.html">List</a></li>
+                        <li><a href="map.html">Map</a></li>
+                        <li><a href="message.html">Message</a></li>
+                        <li><a href="sepratore.html">Separator</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="table.html">Table</a></li>
+                        <li><a href="tabs.html">Tabs</a></li>
+                        <li><a href="video.html">Video</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <form action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
+                        <input name="text" type="hidden" value="{{redirect_to}}">
+                        <select name="language">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                            <option value="{{language.code}}"{% if language.code == LANGUAGE_CODE %}
+                                    selected{% endif %}>
+                                {{language.name_local}} ({{language.code}})
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="Go">
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <!--NAVIGATION END-->
+        <nav class="navbar navbar-default">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        </nav>

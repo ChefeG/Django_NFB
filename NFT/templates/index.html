@@ -1,0 +1,566 @@
+{% load static %}
+{% include 'include/head.html' %}
+  <body>
+    
+    <!--// Wrapper //-->
+    <div class="kode-wrapper">
+      <header id="mainheader" class="kode-header-absolute">
+
+        <!--// TopBaar //-->
+          <div class="kode-topbar">
+		  <div class="container">
+              <div class="row">
+<!--                  {% include 'include/NewsLine.html' %}-->
+                <div class="col-md-6 kode_bg_white">
+					<ul class="top_slider_bxslider">
+                      {% for elem in news_line %}
+                      <li><span class="kode-barinfo"><strong>{{elem.news}}</strong></span></li>
+                      {% endfor %}
+                    </ul>
+				</div>
+                <div class="col-md-6">
+                  <ul class="kode-userinfo">
+                    <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal"><i
+                            class="fa fa-sign-in"></i>
+                        Login
+                    </a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModalTwo"><i class="fa fa-user-plus"></i> Register</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--// TopBaar //-->
+		
+		<div class="header-8">
+			<div class="container">
+				<!--NAVIGATION START-->
+				<div class="kode-navigation pull-left">
+					<ul>
+						 <li><a href="{% url 'main' %}">Home</a></li>
+                          <li><a href="{% url 'about' %}">About Us</a></li>
+                          <li><a href="{% url 'announcements_list_view' %}">announcements</a>
+                            <ul class="children">
+                              <li><a href="fixer_list.html">All Matches</a></li>
+                              <li><a href="fixer_list_view.html">List View</a></li>
+                              <li><a href="fixture_full_view.html">Full View</a></li>
+							  <li><a href="fixture-detail.html">Fixture detail</a></li>
+                            </ul>
+                          </li>
+						  <li><a href="{% url 'contact' %}">Contact us</a>
+						  </li>
+
+					</ul>
+				</div>
+				<!--NAVIGATION END-->
+				<!--LOGO START-->	
+				<div class="logo">
+					<a href="index.html" class="logo"><img src="{% static 'images/logo_2.png' %}" ></a>
+				</div>
+				<!--LOGO END-->	
+				<!--NAVIGATION START-->
+				<div class="kode-navigation">
+					<ul>
+						<li>
+							<a href="{% url 'team' %}">Team & Player</a>
+							<ul class="children">
+							  <li><a href="player-list.html">Players</a></li>
+							  <li><a href="player-detail.html">Player detail</a></li>
+							  <li><a href="team-detail.html">Team Detail</a></li>
+							</ul>
+						  </li>
+						  <li><a href="{% url 'faq' %}">Faq</a></li>
+<!--						<li><a href="#">blog</a>-->
+<!--							<ul class="children">-->
+<!--							  <li><a href="product-list.html">Product list</a></li>-->
+<!--							  <li><a href="product-detail.html">Product Detail</a></li>-->
+<!--							</ul>-->
+<!--						  </li>-->
+                          <li><a href="{% url 'blog' %}">Blog</a>
+                            <ul class="children">
+                              <li><a href="accordian.html">Accordion</a></li>
+                              <li><a href="button.html">Button</a></li>
+                              <li><a href="frame.html">Image Frame</a></li>
+                              <li><a href="list.html">List</a></li>
+                              <li><a href="map.html">Map</a></li>
+                              <li><a href="message.html">Message</a></li>
+                              <li><a href="sepratore.html">Separator</a></li>
+                              <li><a href="skills.html">Skills</a></li>
+                              <li><a href="table.html">Table</a></li>
+                              <li><a href="tabs.html">Tabs</a></li>
+                              <li><a href="video.html">Video</a></li>
+                            </ul>
+                          </li>
+					</ul>
+				</div>
+				<!--NAVIGATION END-->  
+				 <nav class="navbar navbar-default">
+                    
+                      <!-- Brand and toggle get grouped for better mobile display -->
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                      </div>
+                  </nav>
+			</div>
+		</div>
+      </header>
+
+      <!--// Main Banner //-->
+      <div id="mainbanner">
+        <div class="flexslider">
+          <ul class="slides">
+            {% for elem in cover %}
+            <li>
+              <img src="{{ elem.image.url }}" alt="" />
+              <div class="container">
+                <div class="kode-caption">       
+                	<h2>{{elem.title}}</h2>
+                    <div class="clearfix"></div>        
+                  <p>{{elem.anons}}<br></p>
+                  <div class="clearfix"></div>
+                  <a class="kode-modren-btn thbg-colortwo" href="{% url 'cover_detail' elem.id %}">Read More</a>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="kode-content">
+		<section class="pick-event padding-30-topbottom margin-top-minus-40">
+        	<div class="container">
+            	<div class="heading">
+                    <h2>Search Match</h2>
+                </div>
+                <div class="form">
+                	<div class="cover">
+                    	<input type="text">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div class="cover">
+                    	<input type="text">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="cover">
+                        <div class="dropdown">
+                            <button aria-expanded="true" data-toggle="dropdown" id="dropdownMenu1" type="button" class="dropdown-toggle">
+                            Dropdown
+                            <i class="fa fa-bars"></i>
+                            </button>
+                            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+                                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Action</a></li>
+                                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Another action</a></li>
+                                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Something else here</a></li>
+                                <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cover">
+                    	<a class="kode-modren-btn thbg-colortwo">Find Event</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--// Page Content //-->
+        <section class="kode-pagesection kode-parallax kode-dark-overlay kode-modern-expert-blogger">
+          <section class="kode-pagesection margin-bottom-40">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="heading heading-12 margin-top30-bottom10">
+                  <h2><span class="left"></span><font color="white">Matches</font><span class="right"></span></h2>
+                </div>
+              </div>
+              <div class="col-md-8">
+
+                <table class="kode-table">
+                  <thead>
+                  <tr>
+                    <th>Upcoming Match</th>
+                    <th>Date</th>
+                    <th>Venue</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for elem in matches %}
+                  <tr>
+                    <td>{{elem.team_1}} <span>VS</span>{{elem.team_2}}</td>
+                    <td>{{elem.date}}</td>
+                    <td>{{elem.venue}}</td>
+                  </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+
+              </div>
+
+              <div class="col-md-4">
+
+                <table class="kode-table kode-table-v2">
+                  <thead>
+                  <tr>
+                    <th>Team</th>
+                    <th>w</th>
+                    <th>d</th>
+                    <th>l</th>
+                    <th>pts</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for elem in team %}
+                  <tr>
+                    <td>{{elem.team}}</td>
+                    <td>{{elem.win}}</td>
+                    <td>{{elem.draw}}</td>
+                    <td>{{elem.lose}}</td>
+                    <td>{{elem.pts}}</td>
+                  </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        </section>
+        <!--// Page Content //-->
+		
+        <!--// Page Content //-->
+        <section class="kode-pagesection top_player_section" >
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-12">
+                <div class="kode-section-title"> <h2>Top Player</h2> </div>
+
+                  <div class="owl-carousel-team owl-theme kode-team-list next-prev-style">
+                    {% for elem in top_player %}
+                    <div class="item">
+                      <figure><a href="#" class="kode-team-thumb"><img src="{{ elem.image.url }}"
+                                                                       alt=""></a>
+                        <figcaption>
+                          <ul class="kode-team-network">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-linkedin"></a></li>
+                          </ul>
+                          <div class="clearfix"></div>
+                          <h2><a href="#">{{elem.name}}</a></h2>
+                          <a href="{% url 'detail' elem.url %}" class="kode-modren-btn thbg-colortwo">View Detail</a>
+                        </figcaption>
+                      </figure>
+                    </div>
+                    {% endfor %}
+                  </div>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+          <!--// Page Content //-->
+
+		<div class="kd-pagesection project_fact_inline">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <!--// Counter Section //-->
+              <div class="kd-counter">
+                {% for elem in statistics %}
+                <ul class="row">
+                  <li class="col-md-3">
+                    <i class="fa fa-soccer-ball-o fa-3x"></i>
+                    <span class="word-count">{{elem.discord_members}}</span>
+                    <small>Discord</small>
+                  </li>
+                  <li class="col-md-3">
+                    <i class="fa fa-users fa-3x"></i>
+                    <span class="word-count">{{elem.twitter_members}}</span>
+                    <small>Twitter</small>
+                  </li>
+                  <li class="col-md-3">
+                    <i class="fa fa-flag fa-3x"></i>
+                    <span class="word-count">{{elem.nft_in_stake}}</span>
+                    <small>NFT in stake</small>
+                  </li>
+                  <li class="col-md-3">
+                    <i class="fa fa-trophy fa-3x"></i>
+                    <span class="word-count">57</span>
+                      {% if user.is_authenticated %}
+                      <small>Ты авторизован, молодец</small>
+                      {% else %}
+                        <small>Слышь чмо, иди регайся, уЁбак</small>
+                      {% endif %}
+                  </li>
+                </ul>
+                {% endfor %}
+              </div>
+              <!--// Counter Section //-->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+		   <!--// Page Content //-->
+        <section class="kode-pagesection kode-next-match-stat" >
+          <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+					<div class="heading heading-12 margin-top30-bottom10">
+						<p>Is Your Team Ready For Next Match!</p>
+						<h2><span class="left"></span>Top matches Of The Month<span class="right"></span></h2>
+					</div>
+				</div>
+		 <div class="col-md-4">
+
+              <table class="kode-table kode-table-v2">
+                <thead>
+                  <tr>
+                    <th>Team</th>
+                    <th>w</th>
+                    <th>d</th>
+                    <th>l</th>
+                    <th>pts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for elem in team %}
+                <tr>
+                  <td>{{elem.team}}</td>
+                  <td>{{elem.win}}</td>
+                  <td>{{elem.draw}}</td>
+                  <td>{{elem.lose}}</td>
+                  <td>{{elem.pts}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+             </table>
+            </div>
+            <div class="col-md-8">
+                <div class="kode-inner-fixer">
+                    <div class="kode-team-match">
+                        {% for elem in top_matches %}
+                        <ul>
+                            <li><a href="#"><img src="{{elem.team_1_image.url}}" alt=""></a></li>
+                            <li class="home-kode-vs"><a href="#" class="kode-modren-btn thbg-colortwo">vs</a></li>
+                            <li><a href="#"><img src="{{elem.team_2_image.url}}" alt=""></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <h3>{{elem.vs}}</h3>
+                        <span class="kode-subtitle">{{elem.description}}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <!--// Page Content //-->
+
+        <!--// Page Content //-->
+        <section class="kode-pagesection kode-parallax kode-dark-overlay kode-modern-expert-blogger">
+          <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+					<div class="heading heading-12 margin-top-bottom-30">
+						<p>Is Your Team Ready For Next Match!</p>
+                        <h2 class="color-white"><span class="left"></span><font color="white">Announcements</font>
+                            <span class="right"></span></h2>
+					</div>
+                  
+                  <div class="kode-blog-list kode-large-blog">
+                    <ul class="row">
+                    {% for elem in announcements %}
+                      <li class="col-md-4">
+                        <div class="kode-time-zoon">
+                          <time datetime="2008-02-14 20:00">{{elem.day}} <span>{{elem.month}}</span></time>
+                          <h5><a href="#">{{elem.title}}</a></h5>
+                        </div>
+                        <figure><a href="#"><img src="{{elem.image.url}}" alt=""></a></figure>
+                        <div class="kode-blog-info">
+                          <p>{{elem.description}}</p>
+                          <a href="{% url 'announcements_detail' elem.url %}" class="kode-blog-btn">Read More</a>
+                          <div class="clearfix"></div>
+                          <ul class="kode-team-network">
+                            <li><a class="fa fa-facebook" href="#"></a></li>
+                            <li><a class="fa fa-twitter" href="#"></a></li>
+                            <li><a class="fa fa-linkedin" href="#"></a></li>
+                          </ul>
+                        </div>
+                      </li>
+                        {% endfor %}
+                    </ul>
+                    <div
+                            class="kode-align-btn"><a href="{% url 'announcements_list_view' %}"
+                                                      class="kode-modren-btn thbg-colortwo">View
+                        More</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <!--// Page Content //-->
+
+      <!--// Main Content //-->
+
+      <!--// NewsLatter //-->
+      <div class="kode-newslatter kode-bg-color" >
+        <span class="kode-halfbg thbg-color"></span>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Subscribe Our Monthly Newsletter</h3>
+            </div>
+            <div class="col-md-6">
+                  {% load contact_tags %}
+                  {% contact_form %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--// NewsLatter //-->
+	 <footer id="footer1" class="kode-parallax kode-dark-overlay kode-bg-pattern">
+		<!--Footer Medium-->
+		<div class="footer-medium">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="about-widget">
+							<h3>About NFB</h3>
+							<ul class="kode-form-list">
+							  <li><i class="fa fa-home"></i> <p><strong>Address:</strong> Дал Дал Напиздел</p></li>
+							  <li><i class="fa fa-phone"></i> <p><strong>Phone:</strong> 8 800 555 3535</p></li>
+							  <li><i class="fa fa-envelope-o"></i>
+                                <p><strong>Email:</strong> ZaskamilLoxov@sobaka.lox</p></li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="widget widget-flickr kode-gallery-pretty">
+							<h3>Flickr</h3>
+							<ul>
+								<li><a data-gal="prettyphoto" href="{% static 'extra-images/widgetgallery-2.jpg'%}"><img alt="" src="{% static 'extra-images/widgetgallery-1.jpg'%}"></a></li>
+								<li><a data-gal="prettyphoto" href="{% static 'extra-images/widgetgallery-2.jpg'%}"><img alt="" src="{% static 'extra-images/widgetgallery-2.jpg'%}"></a></li>
+								<li><a data-gal="prettyphoto" href="{% static 'extra-images/widgetgallery-2.jpg'%}"><img alt="" src="{% static 'extra-images/widgetgallery-3.jpg'%}"></a></li>
+								<li><a data-gal="prettyphoto" href="{% static 'extra-images/widgetgallery-2.jpg'%}"><img alt="" src="{% static 'extra-images/widgetgallery-1.jpg'%}"></a></li>
+								<li><a data-gal="prettyphoto" href="{% static 'extra-images/widgetgallery-2.jpg'%}"><img alt="" src="{% static 'extra-images/widgetgallery-2.jpg'%}"></a></li>
+								<li><a data-gal="prettyphoto" href="{% static 'extra-images/widgetgallery-2.jpg'%}"><img alt="" src="{% static 'extra-images/widgetgallery-3.jpg'%}"></a></li>
+								<li><a data-gal="prettyphoto" href="{% static 'extra-images/widgetgallery-2.jpg'%}"><img alt="" src="{% static 'extra-images/widgetgallery-1.jpg'%}"></a></li>
+								<li><a data-gal="prettyphoto" href="{% static 'extra-images/widgetgallery-2.jpg'%}"><img alt="" src="{% static 'extra-images/widgetgallery-2.jpg'%}"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="contact-us-widget">
+							<h3>Connect with us</h3>
+							<p>Follow us to stay in the loop on what’s<br>
+							Sed ut perspiciatis unde omnis iste natus<br> error sit Sed ut perspiciatis unde omnis iste<br> natus error sit</p>
+							<ul class="social-links1">
+								<li>
+									<a href="#" class="tw-bg1"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#" class="fb-bg1"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#" class="youtube-bg1"><i class="fa fa-youtube"></i></a>
+								</li>
+								<li>
+									<a href="#" class="linkedin-bg1"><i class="fa fa-linkedin"></i></a>
+								</li>
+								<li>
+									<a href="#" class="tw-bg1"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#" class="fb-bg1"><i class="fa fa-facebook"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Footer Medium End-->
+	
+    
+      </footer>
+      <!--// Contact Footer //-->
+
+      <div class="kode-bottom-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>©NFB. All Right Reserved</p>
+            </div>
+            <div class="col-md-6">
+              <a href="#" id="kode-topbtn" class="thbg-colortwo"><i class="fa fa-angle-up"></i></a>
+            </div>
+          </div>
+        </div>      </div>
+<div class="clearfix clear"></div>
+    </div>
+    <!--// Wrapper //-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header thbg-color">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Login To Your Account</h4>
+          </div>
+
+          <div class="modal-body">
+<!--              {% include 'account/login.html' %}-->
+            <form class="kode-loginform">
+              <p><span>User Name</span> <input type="text" placeholder="User Name"></p>
+              <p><span>Password</span> <input type="password" placeholder="Password"></p>
+              <p><label><input type="checkbox"><span>Remember Me</span></label></p>
+              <p class="kode-submit"><a href="#">Lost Your Password</a> <input class="thbg-colortwo" type="submit" value="Sign in"></p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header thbg-color">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Register</h4>
+          </div>
+          <div class="modal-body">
+            <form class="kode-loginform">
+              <p><span>Email</span> <input type="text" placeholder="Email"></p>
+              <p><span>Password</span> <input type="password" placeholder="Password"></p>
+              <p><span>Retype Password</span> <input type="password" placeholder="Retype Password"></p>
+              <p><label><input type="checkbox"><span>Remember Me</span></label></p>
+              <p class="kode-submit"><a href="#">Lost Your Password</a> <input class="thbg-colortwo" type="submit" value="Sign Up"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+        <!-- jQuery (necessary for JavaScript plugins) -->
+        {% include 'include/scripts.html' %}
+
+    </div>
+  </body>
+</html>
